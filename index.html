@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Jeevitha A — Developer & Builder</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --cream: #FAF7F2;
+  --warm-white: #FDF9F4;
+  --ink: #1A1614;
+  --ink-muted: #5A4E48;
+  --ink-faint: #9E8E87;
+  --coral: #E8603C;
+  --coral-light: #FBE9E3;
+  --coral-mid: #F0957A;
+  --sage: #4A7B5E;
+  --sage-light: #E3EFE9;
+  --teal: #2A7575;
+  --teal-light: #E0F0F0;
+  --amber: #C4760A;
+  --amber-light: #FBF0DC;
+  --plum: #7B3FA0;
+  --plum-light: #F0E6F8;
+  --border: rgba(90,78,72,0.12);
+  --border-mid: rgba(90,78,72,0.22);
+  --shadow: 0 2px 24px rgba(26,22,20,0.06);
+  --shadow-card: 0 4px 32px rgba(26,22,20,0.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;line-height:1.6;overflow-x:hidden}
+
+/* ─── NAV ─── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 2rem;height:60px;display:flex;align-items:center;justify-content:space-between;background:rgba(250,247,242,0.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:18px;color:var(--ink);text-decoration:none;letter-spacing:-0.02em}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:13px;font-weight:400;color:var(--ink-muted);text-decoration:none;letter-spacing:0.03em;transition:color .2s}
+.nav-links a:hover{color:var(--coral)}
+.nav-cta{background:var(--ink);color:var(--cream)!important;padding:7px 16px;border-radius:20px;font-size:13px;font-weight:500;text-decoration:none;transition:background .2s!important}
+.nav-cta:hover{background:var(--coral)!important;color:#fff!important}
+
+/* ─── HERO ─── */
+.hero{min-height:100vh;display:flex;align-items:center;padding:80px 2rem 4rem;max-width:1100px;margin:0 auto;gap:4rem}
+.hero-text{flex:1}
+.hero-eyebrow{font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--coral);font-weight:500;margin-bottom:1.2rem;display:flex;align-items:center;gap:.6rem}
+.hero-eyebrow::after{content:'';flex:1;height:1px;background:var(--coral-mid);opacity:.4;max-width:80px}
+h1{font-family:'DM Serif Display',serif;font-size:clamp(42px,6vw,72px);line-height:1.1;letter-spacing:-0.03em;color:var(--ink);margin-bottom:1.5rem}
+h1 em{font-style:italic;color:var(--coral)}
+.hero-sub{font-size:17px;color:var(--ink-muted);line-height:1.7;max-width:480px;margin-bottom:2rem;font-weight:300}
+.hero-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.5rem}
+.chip{font-size:12px;font-weight:500;padding:5px 12px;border-radius:20px;border:1px solid var(--border-mid);color:var(--ink-muted);background:transparent;letter-spacing:.02em}
+.chip.coral{background:var(--coral-light);border-color:var(--coral-mid);color:var(--coral)}
+.chip.sage{background:var(--sage-light);border-color:#A8CEB8;color:var(--sage)}
+.chip.teal{background:var(--teal-light);border-color:#A0CECE;color:var(--teal)}
+.chip.plum{background:var(--plum-light);border-color:#C9A0E0;color:var(--plum)}
+.chip.amber{background:var(--amber-light);border-color:#E0B86A;color:var(--amber)}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{padding:11px 24px;border-radius:30px;font-size:14px;font-weight:500;text-decoration:none;transition:all .25s;display:inline-flex;align-items:center;gap:.4rem;letter-spacing:.01em}
+.btn-primary{background:var(--ink);color:var(--cream)}
+.btn-primary:hover{background:var(--coral);transform:translateY(-1px)}
+.btn-outline{border:1px solid var(--border-mid);color:var(--ink-muted)}
+.btn-outline:hover{border-color:var(--ink);color:var(--ink);background:rgba(26,22,20,0.04)}
+.hero-visual{flex:0 0 340px;position:relative;display:flex;align-items:center;justify-content:center}
+.hero-blob{width:300px;height:300px;border-radius:60% 40% 50% 60% / 50% 60% 40% 60%;background:linear-gradient(135deg,var(--coral-light) 0%,var(--teal-light) 50%,var(--plum-light) 100%);display:flex;align-items:center;justify-content:center;animation:blobmorph 8s ease-in-out infinite;position:relative}
+@keyframes blobmorph{0%,100%{border-radius:60% 40% 50% 60% / 50% 60% 40% 60%}50%{border-radius:40% 60% 60% 40% / 60% 30% 70% 40%}}
+.hero-avatar-text{font-family:'DM Serif Display',serif;font-size:80px;color:var(--coral);opacity:.9}
+.hero-float-card{position:absolute;background:#fff;border:1px solid var(--border);border-radius:12px;padding:10px 14px;box-shadow:var(--shadow-card);font-size:12px;font-weight:500}
+.hfc-1{top:10px;right:-20px;animation:floatY 3s ease-in-out infinite}
+.hfc-2{bottom:20px;left:-20px;animation:floatY 3s ease-in-out infinite .8s}
+.hfc-3{top:50%;right:-30px;transform:translateY(-50%);animation:floatY 3s ease-in-out infinite 1.4s}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.hfc-2{animation:floatY2 3s ease-in-out infinite .8s}
+@keyframes floatY2{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.hfc-dot{width:7px;height:7px;border-radius:50%;display:inline-block;margin-right:5px}
+
+/* ─── SECTIONS ─── */
+section{padding:6rem 2rem;max-width:1100px;margin:0 auto}
+.section-label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);font-weight:500;margin-bottom:.75rem}
+.section-title{font-family:'DM Serif Display',serif;font-size:clamp(28px,4vw,44px);letter-spacing:-.02em;line-height:1.15;margin-bottom:3rem;color:var(--ink)}
+.section-title em{font-style:italic;color:var(--ink-muted)}
+
+/* ─── DOMAINS ─── */
+.domains-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.domain-card{padding:1.5rem;border-radius:16px;border:1px solid var(--border);background:var(--warm-white);transition:all .25s;cursor:default}
+.domain-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-card)}
+.domain-icon{font-size:28px;margin-bottom:.75rem}
+.domain-name{font-size:15px;font-weight:500;margin-bottom:.3rem;color:var(--ink)}
+.domain-desc{font-size:13px;color:var(--ink-muted);line-height:1.5}
+.domain-card.d1{border-top:3px solid var(--coral)}
+.domain-card.d2{border-top:3px solid var(--sage)}
+.domain-card.d3{border-top:3px solid var(--teal)}
+.domain-card.d4{border-top:3px solid var(--plum)}
+.domain-card.d5{border-top:3px solid var(--amber)}
+
+/* ─── PROJECTS ─── */
+.projects-grid{display:grid;gap:1.5rem}
+.proj-row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.proj-row.single{grid-template-columns:1fr}
+.project-card{border-radius:20px;border:1px solid var(--border);background:var(--warm-white);padding:2rem;transition:all .3s;position:relative;overflow:hidden}
+.project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.project-card.c-coral::before{background:var(--coral)}
+.project-card.c-sage::before{background:var(--sage)}
+.project-card.c-teal::before{background:var(--teal)}
+.project-card.c-plum::before{background:var(--plum)}
+.project-card.c-amber::before{background:var(--amber)}
+.project-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-card)}
+.project-card.featured{grid-column:span 1}
+.proj-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1rem;gap:1rem}
+.proj-emoji{font-size:32px;line-height:1}
+.proj-links{display:flex;gap:.5rem;flex-shrink:0}
+.proj-link{width:32px;height:32px;border-radius:50%;border:1px solid var(--border-mid);display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--ink-muted);font-size:14px;transition:all .2s}
+.proj-link:hover{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.proj-name{font-family:'DM Serif Display',serif;font-size:22px;letter-spacing:-.02em;margin-bottom:.4rem;color:var(--ink)}
+.proj-tagline{font-size:13px;color:var(--coral);font-weight:500;margin-bottom:.75rem;letter-spacing:.01em}
+.proj-desc{font-size:14px;color:var(--ink-muted);line-height:1.65;margin-bottom:1rem}
+.proj-stack{display:flex;flex-wrap:wrap;gap:.4rem}
+.proj-tag{font-size:11px;font-weight:500;padding:3px 9px;border-radius:10px;background:rgba(90,78,72,0.06);color:var(--ink-muted);border:1px solid var(--border)}
+.proj-live-badge{display:inline-flex;align-items:center;gap:.3rem;font-size:11px;font-weight:500;padding:3px 9px;border-radius:10px;background:var(--sage-light);color:var(--sage);border:1px solid #A8CEB8}
+.proj-live-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--sage);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+/* ─── SKILLS ─── */
+.skills-layout{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.skill-group{margin-bottom:1.5rem}
+.skill-group-title{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);font-weight:500;margin-bottom:.6rem}
+.skill-pills{display:flex;flex-wrap:wrap;gap:.4rem}
+.skill-pill{font-size:13px;font-weight:400;padding:5px 13px;border-radius:20px;border:1px solid var(--border-mid);color:var(--ink-muted);background:var(--warm-white);transition:all .2s}
+.skill-pill:hover{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.skill-pill.highlight{background:var(--coral-light);border-color:var(--coral-mid);color:var(--coral);font-weight:500}
+
+/* ─── EXPERIENCE ─── */
+.exp-list{display:flex;flex-direction:column;gap:1rem}
+.exp-item{display:grid;grid-template-columns:60px 1fr;gap:1.5rem;padding:1.5rem;border-radius:16px;border:1px solid var(--border);background:var(--warm-white);transition:all .25s}
+.exp-item:hover{box-shadow:var(--shadow);border-color:var(--border-mid)}
+.exp-year{font-size:11px;color:var(--ink-faint);font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding-top:3px}
+.exp-role{font-size:15px;font-weight:500;color:var(--ink);margin-bottom:.2rem}
+.exp-company{font-size:13px;color:var(--coral);margin-bottom:.4rem;font-weight:400}
+.exp-detail{font-size:13px;color:var(--ink-muted);line-height:1.5}
+
+/* ─── CERTS ─── */
+.certs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.75rem}
+.cert-card{padding:1rem 1.25rem;border-radius:12px;border:1px solid var(--border);background:var(--warm-white);transition:all .2s}
+.cert-card:hover{border-color:var(--coral-mid);background:var(--coral-light)}
+.cert-name{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:.2rem}
+.cert-issuer{font-size:12px;color:var(--ink-faint)}
+
+/* ─── CONTACT / FOOTER ─── */
+.contact-section{background:var(--ink);border-radius:32px;padding:4rem 3rem;text-align:center;margin:0 2rem 4rem}
+.contact-section h2{font-family:'DM Serif Display',serif;font-size:clamp(28px,4vw,48px);color:var(--cream);letter-spacing:-.02em;margin-bottom:.75rem}
+.contact-section h2 em{color:var(--coral-mid);font-style:italic}
+.contact-sub{font-size:16px;color:rgba(253,249,244,.6);margin-bottom:2.5rem;font-weight:300}
+.contact-links{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+.contact-link{padding:11px 22px;border-radius:30px;font-size:14px;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;transition:all .25s}
+.contact-link.primary{background:var(--coral);color:#fff}
+.contact-link.primary:hover{background:var(--coral-mid);transform:translateY(-2px)}
+.contact-link.ghost{border:1px solid rgba(253,249,244,.2);color:rgba(253,249,244,.8)}
+.contact-link.ghost:hover{border-color:var(--cream);color:var(--cream);background:rgba(253,249,244,.08)}
+footer{text-align:center;padding:2rem;font-size:12px;color:var(--ink-faint)}
+
+/* ─── DIVIDERS ─── */
+.full-divider{border:none;border-top:1px solid var(--border);margin:0 2rem}
+
+/* ─── SCROLL REVEAL ─── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ─── MOBILE ─── */
+@media(max-width:768px){
+  .hero{flex-direction:column;gap:2rem;padding-top:100px}
+  .hero-visual{display:none}
+  .proj-row{grid-template-columns:1fr}
+  .skills-layout{grid-template-columns:1fr}
+  .nav-links li:not(:last-child){display:none}
+  .contact-section{margin:0 1rem 3rem;padding:2.5rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">JA.</a>
+  <ul class="nav-links">
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact" class="nav-cta">Let's connect ↗</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div style="max-width:1100px;margin:0 auto">
+<section class="hero" style="padding-top:120px">
+  <div class="hero-text">
+    <div class="hero-eyebrow">B.E. CSBS · BMSIT&amp;M Bengaluru</div>
+    <h1>Building things<br/>that <em>actually</em><br/>matter.</h1>
+    <p class="hero-sub">I'm Jeevitha A — a second-year CS student who builds AI-powered products for real people. Farmers, mothers, patients. Code that ships, not just studies.</p>
+    <div class="hero-chips">
+      <span class="chip coral">AI / ML</span>
+      <span class="chip sage">Full-Stack Dev</span>
+      <span class="chip teal">HealthTech</span>
+      <span class="chip plum">AgriTech</span>
+      <span class="chip amber">Startup Builder</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary">See my work ↓</a>
+      <a href="https://www.linkedin.com/in/jeevitha-a-11a1222b4" target="_blank" class="btn btn-outline">LinkedIn ↗</a>
+      <a href="https://github.com/Jeevitha3025" target="_blank" class="btn btn-outline">GitHub ↗</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-blob">
+      <span class="hero-avatar-text">J</span>
+    </div>
+    <div class="hero-float-card hfc-1">
+      <span class="hfc-dot" style="background:#E8603C"></span>3 live products
+    </div>
+    <div class="hero-float-card hfc-2">
+      <span class="hfc-dot" style="background:#4A7B5E"></span>National hackathon winner
+    </div>
+    <div class="hero-float-card hfc-3">
+      <span class="hfc-dot" style="background:#7B3FA0"></span>Govt. Karnataka startup
+    </div>
+  </div>
+</section>
+</div>
+
+<hr class="full-divider"/>
+
+<!-- DOMAINS -->
+<section class="reveal">
+  <div class="section-label">What I build</div>
+  <div class="section-title">Five domains,<br/><em>one obsession</em> — impact.</div>
+  <div class="domains-grid">
+    <div class="domain-card d1">
+      <div class="domain-icon">🤖</div>
+      <div class="domain-name">AI & LLM Integration</div>
+      <div class="domain-desc">Gemini API, RAG pipelines, LangChain — building AI that actually understands context, not just autocompletes.</div>
+    </div>
+    <div class="domain-card d2">
+      <div class="domain-icon">🌾</div>
+      <div class="domain-name">AgriTech</div>
+      <div class="domain-desc">Gamified farmer empowerment — real-time market prices, AI crop advice, govt. scheme tracking for Bharat's backbone.</div>
+    </div>
+    <div class="domain-card d3">
+      <div class="domain-icon">🏥</div>
+      <div class="domain-name">HealthTech</div>
+      <div class="domain-desc">ML-powered revenue cycle management and maternal mental wellness — where data meets dignity.</div>
+    </div>
+    <div class="domain-card d4">
+      <div class="domain-icon">⚡</div>
+      <div class="domain-name">Full-Stack Dev</div>
+      <div class="domain-desc">React + TypeScript frontends, Django REST backends, Firebase real-time — end-to-end from wireframe to Render deploy.</div>
+    </div>
+    <div class="domain-card d5">
+      <div class="domain-icon">📊</div>
+      <div class="domain-name">ML & Data</div>
+      <div class="domain-desc">XGBoost, SHAP explainability, clinical screening models — ML that explains itself, not just predicts.</div>
+    </div>
+  </div>
+</section>
+
+<hr class="full-divider"/>
+
+<!-- PROJECTS -->
+<section id="projects" class="reveal">
+  <div class="section-label">Selected work</div>
+  <div class="section-title">Projects that<br/><em>shipped</em>.</div>
+
+  <div class="projects-grid">
+
+    <!-- Row 1: KrishiVerse (big) + Maahyu -->
+    <div class="proj-row">
+      <div class="project-card c-sage featured">
+        <div class="proj-header">
+          <div class="proj-emoji">🌾</div>
+          <div class="proj-links">
+            <span class="proj-live-badge">Live</span>
+            <a href="https://krishiverse-ronz.onrender.com" target="_blank" class="proj-link" title="Live demo">↗</a>
+            <a href="https://github.com/Jeevitha3025/Krishiverse" target="_blank" class="proj-link" title="GitHub">⌥</a>
+          </div>
+        </div>
+        <div class="proj-name">KrishiVerse</div>
+        <div class="proj-tagline">Gamified AgriTech · Live on Render</div>
+        <div class="proj-desc">Full-stack web app empowering Indian farmers with real-time market prices, AI crop recommendations via Gemini Vision API, a quest-based learning system, and government scheme tracking. Level up your farm, literally.</div>
+        <div class="proj-stack">
+          <span class="proj-tag">React</span>
+          <span class="proj-tag">TypeScript</span>
+          <span class="proj-tag">Firebase</span>
+          <span class="proj-tag">Gemini Vision API</span>
+          <span class="proj-tag">Node.js</span>
+          <span class="proj-tag">Tailwind</span>
+        </div>
+      </div>
+
+      <div class="project-card c-coral">
+        <div class="proj-header">
+          <div class="proj-emoji">🤱</div>
+          <div class="proj-links">
+            <span class="proj-live-badge">Live</span>
+            <a href="https://projectmaahyu.onrender.com" target="_blank" class="proj-link" title="Live demo">↗</a>
+            <a href="https://github.com/Jeevitha3025/ProjectMaahyu" target="_blank" class="proj-link" title="GitHub">⌥</a>
+          </div>
+        </div>
+        <div class="proj-name">Maahyu</div>
+        <div class="proj-tagline">AI Maternal Wellness · Govt. Karnataka Submission</div>
+        <div class="proj-desc">Maa + Aayu. 24/7 AI companion for Indian mothers — GAD-7/PHQ-9 clinical screening, mood tracking, Gemini-powered empathetic chatbot (SHEro), anonymous peer community, and indigenous wellness wisdom (Ajji's Wisdom).</div>
+        <div class="proj-stack">
+          <span class="proj-tag">React</span>
+          <span class="proj-tag">TypeScript</span>
+          <span class="proj-tag">Gemini API</span>
+          <span class="proj-tag">Python</span>
+          <span class="proj-tag">Tailwind</span>
+          <span class="proj-tag">RGEP</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: RCM + RAG Chatbot -->
+    <div class="proj-row">
+      <div class="project-card c-teal">
+        <div class="proj-header">
+          <div class="proj-emoji">🏥</div>
+          <div class="proj-links">
+            <span class="proj-live-badge">Live</span>
+            <a href="https://smart-rcm.onrender.com" target="_blank" class="proj-link" title="Live demo">↗</a>
+            <a href="https://github.com/Jeevitha3025/RCM" target="_blank" class="proj-link" title="GitHub">⌥</a>
+          </div>
+        </div>
+        <div class="proj-name">Smart RCM</div>
+        <div class="proj-tagline">Predictive Healthcare Revenue Cycle</div>
+        <div class="proj-desc">ML-powered platform predicting healthcare claim denials before they happen. XGBoost + SHAP explainability so clinicians understand the why, not just the prediction. Django REST API + React dashboard.</div>
+        <div class="proj-stack">
+          <span class="proj-tag">XGBoost</span>
+          <span class="proj-tag">SHAP</span>
+          <span class="proj-tag">Django REST</span>
+          <span class="proj-tag">React</span>
+          <span class="proj-tag">Python</span>
+        </div>
+      </div>
+
+      <div class="project-card c-plum">
+        <div class="proj-header">
+          <div class="proj-emoji">🧠</div>
+          <div class="proj-links">
+            <a href="https://github.com/Jeevitha3025/RAG-Chatbot" target="_blank" class="proj-link" title="GitHub">⌥</a>
+          </div>
+        </div>
+        <div class="proj-name">RAG Chatbot</div>
+        <div class="proj-tagline">Retrieval-Augmented Generation</div>
+        <div class="proj-desc">A conversational AI system using RAG architecture — embeds documents, retrieves context-relevant chunks, and generates grounded answers. Foundation for context-aware enterprise chatbots.</div>
+        <div class="proj-stack">
+          <span class="proj-tag">LangChain</span>
+          <span class="proj-tag">Python</span>
+          <span class="proj-tag">Vector DB</span>
+          <span class="proj-tag">LLM</span>
+          <span class="proj-tag">RAG</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3: Food Ordering + Bank App -->
+    <div class="proj-row">
+      <div class="project-card c-amber">
+        <div class="proj-header">
+          <div class="proj-emoji">🍽️</div>
+          <div class="proj-links">
+            <a href="https://github.com/Jeevitha3025/food-ordering-sql" target="_blank" class="proj-link" title="SQL repo">⌥</a>
+            <a href="https://github.com/Jeevitha3025/food-ordering-mongo" target="_blank" class="proj-link" title="MongoDB repo">⌥</a>
+          </div>
+        </div>
+        <div class="proj-name">Dual-DB Food Ordering</div>
+        <div class="proj-tagline">College Canteen · SQL + MongoDB</div>
+        <div class="proj-desc">Same food ordering system, two architectures — relational (MySQL) and document (MongoDB). Built to understand the real trade-offs between structured and schema-less data at scale.</div>
+        <div class="proj-stack">
+          <span class="proj-tag">Python</span>
+          <span class="proj-tag">MySQL</span>
+          <span class="proj-tag">MongoDB</span>
+          <span class="proj-tag">HTML/CSS</span>
+        </div>
+      </div>
+
+      <div class="project-card" style="border-top:3px solid #888">
+        <div class="proj-header">
+          <div class="proj-emoji">🏦</div>
+          <div class="proj-links">
+            <a href="https://github.com/Jeevitha3025/BasicBankApplication" target="_blank" class="proj-link" title="GitHub">⌥</a>
+          </div>
+        </div>
+        <div class="proj-name">Basic Bank App</div>
+        <div class="proj-tagline">Java OOP · Core Banking</div>
+        <div class="proj-desc">Console-based banking system with account creation, deposits, withdrawals, and balance tracking. Built to solidify Java OOP principles — inheritance, encapsulation, exception handling.</div>
+        <div class="proj-stack">
+          <span class="proj-tag">Java</span>
+          <span class="proj-tag">OOP</span>
+          <span class="proj-tag">File I/O</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="full-divider"/>
+
+<!-- SKILLS -->
+<section id="skills" class="reveal">
+  <div class="section-label">Tech stack</div>
+  <div class="section-title">What I work<br/><em>with</em>.</div>
+  <div class="skills-layout">
+    <div>
+      <div class="skill-group">
+        <div class="skill-group-title">Languages</div>
+        <div class="skill-pills">
+          <span class="skill-pill highlight">Python</span>
+          <span class="skill-pill highlight">TypeScript</span>
+          <span class="skill-pill">JavaScript</span>
+          <span class="skill-pill">Java</span>
+          <span class="skill-pill">SQL</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Frontend</div>
+        <div class="skill-pills">
+          <span class="skill-pill highlight">React</span>
+          <span class="skill-pill">Vite</span>
+          <span class="skill-pill">Tailwind CSS</span>
+          <span class="skill-pill">HTML5/CSS3</span>
+          <span class="skill-pill">shadcn/ui</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">AI / ML</div>
+        <div class="skill-pills">
+          <span class="skill-pill highlight">Gemini API</span>
+          <span class="skill-pill highlight">LangChain</span>
+          <span class="skill-pill">RAG</span>
+          <span class="skill-pill">XGBoost</span>
+          <span class="skill-pill">SHAP</span>
+          <span class="skill-pill">scikit-learn</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="skill-group">
+        <div class="skill-group-title">Backend</div>
+        <div class="skill-pills">
+          <span class="skill-pill highlight">Django REST</span>
+          <span class="skill-pill">Node.js</span>
+          <span class="skill-pill">Express</span>
+          <span class="skill-pill">Flask</span>
+          <span class="skill-pill">FastAPI</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Cloud & Data</div>
+        <div class="skill-pills">
+          <span class="skill-pill highlight">Firebase</span>
+          <span class="skill-pill">Render</span>
+          <span class="skill-pill">PostgreSQL</span>
+          <span class="skill-pill">MongoDB</span>
+          <span class="skill-pill">MySQL</span>
+          <span class="skill-pill">Drizzle ORM</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Tools</div>
+        <div class="skill-pills">
+          <span class="skill-pill">Git</span>
+          <span class="skill-pill">Figma</span>
+          <span class="skill-pill">VS Code</span>
+          <span class="skill-pill">Replit</span>
+          <span class="skill-pill">Postman</span>
+          <span class="skill-pill">Google Colab</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="full-divider"/>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="reveal">
+  <div class="section-label">Experience & leadership</div>
+  <div class="section-title">Beyond the<br/><em>classroom</em>.</div>
+  <div class="exp-list">
+    <div class="exp-item">
+      <div class="exp-year">2024</div>
+      <div>
+        <div class="exp-role">Project Management Intern</div>
+        <div class="exp-company">ECLearnix EdTech</div>
+        <div class="exp-detail">Sprint planning, cross-functional team coordination, and stakeholder communication for EdTech product delivery. First hands-on exposure to PM in a startup environment.</div>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-year">2023–</div>
+      <div>
+        <div class="exp-role">NCC Cadet Leader</div>
+        <div class="exp-company">BMSIT National Cadet Corps</div>
+        <div class="exp-detail">Led a cadet group — coordinated drills, represented the unit at camp-level events, and honed leadership, discipline, and team management under structured command.</div>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-year">2024–</div>
+      <div>
+        <div class="exp-role">National Hackathon Winner</div>
+        <div class="exp-company">Multiple competitions</div>
+        <div class="exp-detail">Won at national-level competitions across AI/ML, product design, and business case tracks. Built and shipped functional MVPs under 24–48 hour time constraints.</div>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-year">2024</div>
+      <div>
+        <div class="exp-role">Govt. Karnataka Startup Submission</div>
+        <div class="exp-company">RGEP — Maahyu / MaaMind</div>
+        <div class="exp-detail">Submitted Maahyu as a startup concept to the Rajiv Gandhi Entrepreneurship Program, Govt. of Karnataka — covering product strategy, market sizing (Bengaluru-first), Kannada localisation, and social impact framework.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="full-divider"/>
+
+<!-- CERTIFICATIONS -->
+<section class="reveal">
+  <div class="section-label">Certifications & coursework</div>
+  <div class="section-title"><em>Always</em> learning.</div>
+  <div class="certs-grid">
+    <div class="cert-card">
+      <div class="cert-name">AI for Management</div>
+      <div class="cert-issuer">NPTEL · IIT Madras</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-name">Introduction to Econometrics</div>
+      <div class="cert-issuer">NPTEL · IIT Madras</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-name">Generative AI Lab Programs</div>
+      <div class="cert-issuer">GPT-Neo · GPT-2 · StarCoder2</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-name">Firebase + React Deployment</div>
+      <div class="cert-issuer">Self-directed · Production shipped</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-name">DSA Self-Study</div>
+      <div class="cert-issuer">Abdul Bari · LeetCode · Striver SDE</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-name">B.E. CSBS</div>
+      <div class="cert-issuer">BMSIT&amp;M · 2023–2027</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-section reveal" id="contact">
+  <h2>Let's build something<br/><em>impactful</em>.</h2>
+  <p class="contact-sub">Open to internships in AI, full-stack, and data analytics. Bengaluru-based, remote-ready.</p>
+  <div class="contact-links">
+    <a href="https://www.linkedin.com/in/jeevitha-a-11a1222b4" target="_blank" class="contact-link primary">LinkedIn ↗</a>
+    <a href="https://github.com/Jeevitha3025" target="_blank" class="contact-link ghost">GitHub ↗</a>
+    <a href="mailto:jeevitha@bmsit.in" class="contact-link ghost">Email ↗</a>
+  </div>
+</div>
+
+<footer>
+  Built with curiosity · Deployed with intent · © 2025 Jeevitha A
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.1 });
+reveals.forEach(r => io.observe(r));
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth'}); }
+  });
+});
+</script>
+</body>
+</html>
